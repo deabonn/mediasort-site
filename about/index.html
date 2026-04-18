@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — MediaSort</title>
+  <meta name="description" content="MediaSort was built by Deanna Bonn — filmmaker, pageant director, and iPhone user who got tired of scrolling through thousands of clips to find the right format." />
+  <link rel="icon" href="../icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-deep: #1a2a6c; --blue-mid: #3a5bc7; --blue-light: #6b8cde;
+      --blue-ghost: #eef3fd; --gold: #e8a820; --gold-pale: #fdf3d8;
+      --white: #ffffff; --off-white: #f8f9fc;
+      --text-dark: #0f1a3d; --text-mid: #3d4f7a; --text-muted: #7a8ab0;
+    }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--white); }
+    nav {
+      position: sticky; top: 0; z-index: 100; padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(26,42,108,0.08);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand img { width: 30px; height: 30px; border-radius: 7px; }
+    .nav-brand span { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--blue-deep); letter-spacing: 0.04em; }
+    .nav-back { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+    .nav-back:hover { color: var(--blue-mid); }
+
+    .page-hero {
+      background: linear-gradient(160deg, #f0f4ff 0%, #ffffff 60%);
+      padding: 60px 2rem 56px;
+      border-bottom: 1px solid rgba(26,42,108,0.06);
+    }
+    .page-hero-inner { max-width: 720px; margin: 0 auto; }
+    .page-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 500; color: var(--blue-deep); line-height: 1.15; }
+
+    .content-wrap { max-width: 720px; margin: 0 auto; padding: 60px 2rem 40px; }
+
+    .origin-story {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+
+    .origin-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 8px 32px rgba(26,42,108,0.15);
+      flex-shrink: 0;
+    }
+
+    .origin-text p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-mid);
+      margin-bottom: 1.1rem;
+    }
+
+    .origin-text p:first-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--blue-deep);
+    }
+
+    .pull-quote {
+      background: var(--blue-ghost);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+    }
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--blue-deep);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .pull-quote cite {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      color: var(--text-muted);
+      margin-top: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--blue-deep); margin: 2.5rem 0 0.75rem; }
+    p { font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--text-mid); margin-bottom: 1rem; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 2rem 0 3rem;
+    }
+    .value-card {
+      background: var(--off-white);
+      border: 1px solid rgba(26,42,108,0.07);
+      border-radius: 16px;
+      padding: 1.25rem;
+    }
+    .value-title { font-size: 14px; font-weight: 500; color: var(--blue-deep); margin-bottom: 6px; }
+    .value-desc { font-size: 13px; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
+
+    .contact-section {
+      background: var(--blue-deep);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .contact-section h2 { color: white; margin-top: 0; }
+    .contact-section p { color: rgba(255,255,255,0.65); font-size: 15px; }
+    .contact-link {
+      display: inline-block;
+      background: var(--gold);
+      color: #2a1800;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 40px;
+      padding: 10px 28px;
+      margin-top: 1rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .contact-link:hover { background: #f5c84a; transform: scale(1.02); }
+
+    footer { background: var(--blue-deep); padding: 32px 2rem; text-align: center; margin-top: 0; }
+    .footer-links { display: flex; gap: 2rem; justify-content: center; list-style: none; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-links a:hover { color: white; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 500px) {
+      .origin-story { grid-template-columns: 1fr; }
+      .origin-icon { width: 64px; height: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-brand">
+      <img src="../icon.png" alt="MediaSort" />
+      <span>MEDIASORT</span>
+    </a>
+    <a href="../index.html" class="nav-back">← Back to home</a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">Our story</p>
+      <h1 class="page-title">Built by a filmmaker<br/>who got tired of scrolling.</h1>
+    </div>
+  </div>
+
+  <div class="content-wrap">
+    <div class="origin-story">
+      <img src="../icon.png" alt="MediaSort icon" class="origin-icon" />
+      <div class="origin-text">
+        <p>MediaSort was born from a real frustration — one that anyone who shoots video on their iPhone knows well.</p>
+        <p>Deanna Bonn is a filmmaker, event videographer, and pageant director based in Kansas. She shoots constantly — landscape footage for YouTube, vertical clips for TikTok and Reels, square photos for Instagram grids, wide shots for clients. Her camera roll holds thousands of files.</p>
+        <p>The problem: Apple's Photos app gives you no way to filter by aspect ratio. Every time she needed her vertical clips, she was scrolling through thousands of photos and videos to find them — guessing, opening, closing, scrolling more.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"There's no reason sorting by aspect ratio shouldn't already exist in Photos. The content creators using iPhone are constantly switching between platforms and formats. I built the tool I needed."</p>
+      <cite>— Deanna Bonn, developer &amp; founder</cite>
+    </div>
+
+    <p>MediaSort started as an idea, went through a prototype phase to validate the concept, and became a fully native iOS app built in Swift with PhotoKit. The golden spiral in the logo — a nod to the golden ratio — reflects both the mathematical nature of aspect ratios and the visual craft that matters to the people who'll use it.</p>
+
+    <p>The app is built to feel like it belongs in Apple's own suite — minimal, fast, and intuitive. A first-time user should understand how to use it within seconds of opening it. No tutorial required.</p>
+
+    <h2>What we believe</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-title">Your photos stay yours</div>
+        <div class="value-desc">MediaSort never uploads, stores, or touches your media. Everything happens on your device.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Tools should be fast</div>
+        <div class="value-desc">If a task takes more than one tap, there's a design problem. We fix design problems.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Free tier means free</div>
+        <div class="value-desc">The free version provides genuine value. No time limits, no nag screens, no watermarks.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-title">Built by a real user</div>
+        <div class="value-desc">Every feature decision comes from firsthand experience with the problem being solved.</div>
+      </div>
+    </div>
+
+    <h2>The app</h2>
+    <p>MediaSort is launching on the App Store for iPhone and iPad. It's a freemium app — the core ratio filtering is free forever. MediaSort Pro unlocks auto-load on launch, batch export by ratio, creating albums by ratio, and filtering by Favorites — the power features for creators and professionals.</p>
+    <p>Pro is priced at $1.99/month or $9.99/year — less than a coffee, for a tool that saves hours of scrolling every week.</p>
+
+    <div class="contact-section">
+      <h2>Get in touch</h2>
+      <p>Questions, feedback, press inquiries, or just want to say hi — we'd love to hear from you.</p>
+      <a href="mailto:mediasortapp@gmail.com" class="contact-link">mediasortapp@gmail.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">About</a></li>
+      <li><a href="../privacy/index.html">Privacy Policy</a></li>
+      <li><a href="mailto:mediasortapp@gmail.com">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Deanna Bonn · MediaSort</p>
+  </footer>
+</body>
+</html>
